@@ -20,7 +20,7 @@ const LoginRegister = () => {
     event.preventDefault();
     try {
       if (state === 'Register') {
-        const { data } = await axios.post(`${backendUrl}register`, {
+        const { data } = await axios.post(`https://personal-backed.onrender.com/register`, {
           RegNo: regNo,
           Name: name,
           Email: email,
@@ -36,7 +36,7 @@ const LoginRegister = () => {
           toast.error(data.message);
         }
       } else {
-        const { data } = await axios.post(`${backendUrl}login`, {
+        const { data } = await axios.post(`https://personal-backed.onrender.com/login`, {
           RegNo: regNo,
           Email: email,
           password
